@@ -1,9 +1,8 @@
-const surpriseButton = document.querySelector("#surprise-button");
-const sortNameButton = document.querySelector("#sort-name-button");
-const sortYearButton = document.querySelector("#sort-year-button");
+const surprise_Button = document.querySelector("#surprise-button");
+const sort_Name_Button = document.querySelector("#sort-name-button");
+const sort_Year_Button = document.querySelector("#sort-year-button");
 
 
-//artistes
 const bands = [
     {
         name: "Sabaton",
@@ -25,7 +24,23 @@ const bands = [
         year: 1981,
         picture: "Image/metallica.png",
         Fun_Fact: "Metallica est le premier groupe de musique à avoir joué sur tous les continents avec un concert en Antartique appelé 'Freeze 'Em All'."
-    } //tu duplique la section entre {} et les {} en ajoutant une virgule a la fin pour ajouter les autres
+    },
+    
+    {
+        name: "Megadeth",
+        genre: "Heavy Metal",
+        year: 1983,
+        picture: "Image/megadeth.png",
+        Fun_Fact: "Dave Mustaine a eu l'idée du nom Megadeth du pamphlet politique évoquant 'arsenal of megadeath' qui signifie un million de morts causée par une guèrre nucléaire."
+    },
+
+    {
+        name: "Ghost",
+        genre: "Rock# Heavy Metal",
+        year: 2006,
+        picture: "Image/ghost.png",
+        Fun_Fact: "Ghost est essentieellement un projet solo où Tobias Forge compose et enregistre lui-même la quasi-totalité de la musique avec un rotating lineup de musiciens anonymes connus sous le nom de 'Nameless Ghouls'."
+    }
 
 ];
 
@@ -34,39 +49,49 @@ const bands = [
 const band_Cards = document.querySelectorAll(".band");
 const band_Container = document.querySelector("#bands");
 
-const cardsNameSort = Array.from(band_Cards);
+const cards_Name_Sort = Array.from(band_Cards);
 
-cardsNameSort.sort(function(a, b) {
+cards_Name_Sort.sort(function(a, b) {
     const nameA = a.querySelector(".band-name").textContent;
     const nameB = b.querySelector(".band-name").textContent;
     return nameA.localeCompare(nameB);
 });
 
-const cardsYearSort = Array.from(band_Cards);
+const cards_Year_Sort = Array.from(band_Cards);
 
-cardsYearSort.sort(function(a, b) {
+cards_Year_Sort.sort(function(a, b) {
     const yearA = a.querySelector(".band-year").textContent;
     const yearB = b.querySelector(".band-year").textContent;
     return yearA-yearB;
 });
 
 
-function sortBandByName() {
-    cardsNameSort.sort();
-    console.log(cardsNameSort.sort());
-    cardsNameSort.forEach(function(anArtist) {
-        band_Container.appendChild(anArtist);
+function sort_Band_By_Name() {
+    cards_Name_Sort.sort();
+    console.log(cards_Name_Sort.sort());
+    cards_Name_Sort.forEach(function(aBand) {
+        band_Container.appendChild(aBand);
     });
 }
 
-sortNameButton.addEventListener("click", sortBandByName);
+sort_Name_Button.addEventListener("click", sort_Band_By_Name);
 
-function sortBandByYear() {
-    cardsYearSort.sort();
-    console.log(cardsYearSort.sort());
-    cardsYearSort.forEach(function(anArtist) {
-        band_Container.appendChild(anArtist);
+function sort_Band_By_Year() {
+    cards_Year_Sort.sort();
+    console.log(cards_Year_Sort.sort());
+    cards_Year_Sort.forEach(function(aBand) {
+        band_Container.appendChild(aBand);
     });
 }
 
-sortYearButton.addEventListener("click", sortBandByYear);
+sort_Year_Button.addEventListener("click", sort_Band_By_Year);
+
+
+
+
+function surprise_Button_Function(){
+
+   window.open('https://youtu.be/Cxqca4RQd_M?si=7oQ-l7KW-wuevkqV');
+}
+
+surprise_Button.addEventListener('click', surprise_Button_Function)
