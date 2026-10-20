@@ -1,6 +1,7 @@
 const surprise_Button = document.querySelector("#surprise-button");
 const sort_Name_Button = document.querySelector("#sort-name-button");
 const sort_Year_Button = document.querySelector("#sort-year-button");
+//trouve les boutons
 
 
 const bands = [
@@ -43,27 +44,35 @@ const bands = [
     }
 
 ];
+//array avec tout les trucs pour chaques groupes
 
 
 
 const band_Cards = document.querySelectorAll(".band");
+//trouve tous les element matchant la classe band
+
 const band_Container = document.querySelector("#bands");
+//trouve le premier element  matchant l'id bands
 
 const cards_Name_Sort = Array.from(band_Cards);
+//trouve tout les trucs des arrays band_Cards
 
 cards_Name_Sort.sort(function(a, b) {
     const nameA = a.querySelector(".band-name").textContent;
     const nameB = b.querySelector(".band-name").textContent;
     return nameA.localeCompare(nameB);
 });
+//trie les cartes (encadrés rouges) par ordre alphabetic via le nom du groupe
 
 const cards_Year_Sort = Array.from(band_Cards);
+//trouve tout les trucs des arrays band_Cards
 
 cards_Year_Sort.sort(function(a, b) {
     const yearA = a.querySelector(".band-year").textContent;
     const yearB = b.querySelector(".band-year").textContent;
     return yearA-yearB;
 });
+//trie les cartes (encadrés rouges) par ordre croissant en fonction des années
 
 
 function sort_Band_By_Name() {
@@ -73,8 +82,10 @@ function sort_Band_By_Name() {
         band_Container.appendChild(aBand);
     });
 }
+//effectue le changement visuel du classement par ordre alphabetique
 
 sort_Name_Button.addEventListener("click", sort_Band_By_Name);
+//event listener du bouton pour trier par le nom
 
 function sort_Band_By_Year() {
     cards_Year_Sort.sort();
@@ -83,15 +94,17 @@ function sort_Band_By_Year() {
         band_Container.appendChild(aBand);
     });
 }
+//effectue les changements visuel du classement par années
 
 sort_Year_Button.addEventListener("click", sort_Band_By_Year);
-
-
+//event listener du bouton pour trier par années
 
 
 function surprise_Button_Function(){
 
    window.open('https://youtu.be/Cxqca4RQd_M?si=7oQ-l7KW-wuevkqV');
 }
+//logique bouton surprise
 
 surprise_Button.addEventListener('click', surprise_Button_Function)
+//event listener du bouton surprise
