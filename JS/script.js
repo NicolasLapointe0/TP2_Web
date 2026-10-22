@@ -1,7 +1,7 @@
 const surprise_Button = document.querySelector("#surprise-button");
 const sort_Name_Button = document.querySelector("#sort-name-button");
 const sort_Year_Button = document.querySelector("#sort-year-button");
-//trouve les boutons
+//créé/trouve les boutons
 
 
 const bands = [
